@@ -8,8 +8,9 @@ export CMP_PATH=/opt/tools/aarch64-none-linux/bin/aarch64-none-linux-gnu-
     Build Minos
     -----------
 
-    # git clone https://github.com/minosproject/minos-hypervisor.git
-    # cd minos-hypervisor/
+    # git clone https://github.com/aananthcn/minos.git
+    # cd minos/
+    # echo ${CMP_PATH} /* to confirm if the CMP_PATH is pointing to the right compiler */
     # ARCH=aarch64 CROSS_COMPILE=${CMP_PATH} make rpi_3_defconfig
     # ARCH=aarch64 CROSS_COMPILE=${CMP_PATH} make && make dtbs && make mvm
 
@@ -19,6 +20,7 @@ export CMP_PATH=/opt/tools/aarch64-none-linux/bin/aarch64-none-linux-gnu-
     ------------
 
     # git clone https://github.com/u-boot/u-boot.git && cd u-boot
+    # echo ${CMP_PATH} /* to confirm if the CMP_PATH is pointing to the right compiler */
     # ARCH=arm64 CROSS_COMPILE=${CMP_PATH} make rpi_3_defconfig
     # ARCH=arm64 CROSS_COMPILE=${CMP_PATH} make -j8
 
@@ -29,6 +31,7 @@ export CMP_PATH=/opt/tools/aarch64-none-linux/bin/aarch64-none-linux-gnu-
 
     # git clone https://github.com/minosproject/linux-raspberry.git && cd linux-raspberry
     # git checkout -b rpi3 origin/minos-rpi3
+    # echo ${CMP_PATH} /* to confirm if the CMP_PATH is pointing to the right compiler */
     # make ARCH=arm64 CROSS_COMPILE=${CMP_PATH} bcmrpi3_defconfig
     # make ARCH=arm64 CROSS_COMPILE=${CMP_PATH} Image -j8
     # make ARCH=arm64 CROSS_COMPILE=${CMP_PATH} modules dtbs -j8
